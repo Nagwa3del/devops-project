@@ -1,4 +1,4 @@
-From ubuntu:latest
-WORKDIR /app
-COPY index.txt /app/index.txt
-CMD ["cat", "/app/index.txt"]
+FROM nginx:alpine
+COPY index.html /usr/share/nginx/html/index.html
+EXPOSE 80
+CMD ["nginx","-g","daemon off;"]
